@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation';
 export const Section = () => {
   return (
     <>
-       <div className="flex flex-row gap-1">
+       <div className="section-wrapper">
             <Cards />
             <Navigation />
        </div>

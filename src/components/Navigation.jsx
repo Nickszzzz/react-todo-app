@@ -1,30 +1,25 @@
 import React from 'react'
-import { RectangleStackIcon, BanknotesIcon, BeakerIcon, CakeIcon } from '@heroicons/react/24/solid'
-import './Navigation.css';
+import { Square3Stack3DIcon, FolderMinusIcon, ClipboardDocumentCheckIcon, SignalIcon } from '@heroicons/react/24/solid'
 
 const Navigation = () => {
   return (
-    <div className='basis-1/12 mt-6 p-2 bg-blue-100'>
-      <ul className='flex flex-col gap-3 toolbar'>
-        <li>
-            <button title='All'>
-                <RectangleStackIcon  className={`h-4 w-4 text-blue-600 font-bold `} /> 
-            </button>
+    <div className='navigation-wrapper' >
+      <ul className='lists'>
+        <li className='active item'>
+            <Square3Stack3DIcon  className={`icon`} />
+            <span className='content'>All</span>
         </li>
-        <li>
-            <button title='Active'>
-                <BanknotesIcon  className={`h-4 w-4 text-blue-600 font-bold `} /> 
-            </button>
+        <li className='item'>
+            <SignalIcon  className={`icon`} />
+            <span className='content'>Active</span>
         </li>
-        <li>
-            <button title='Completed'>
-                <BeakerIcon  className={`h-4 w-4 text-blue-600 font-bold `} /> 
-            </button>
+        <li className='item'>
+          <ClipboardDocumentCheckIcon  className={`icon`} />
+          <span className='content'>Completed</span>
         </li>
-        <li>
-            <button title='Clear Completed'>
-                <CakeIcon className={`h-4 w-4 text-blue-600 font-bold `} /> 
-            </button>
+        <li className='item'>
+          <FolderMinusIcon  className={`icon`} />
+          <span className='content'>Clear Completed</span>
         </li>
       </ul>
     </div>

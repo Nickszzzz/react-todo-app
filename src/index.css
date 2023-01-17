@@ -1,3 +1,129 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .todo-card {
+        @apply flex h-full bg-blue-600 w-full rounded-sm bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 border border-gray-100 justify-between shadow-lg shadow-blue-600/30 gap-3 px-4 py-2  w-full;
+    }
+
+    .todo-card .icons {
+        @apply flex justify-between order-2 flex-col p-1 gap-3;
+    }
+
+    .todo-card .icon {
+        @apply h-4 w-4 text-white font-bold hover:scale-125 transition duration-150 ease-out hover:ease-in;
+    }
+
+    .todo-card .icon-danger {
+        @apply  h-4 w-4 text-white font-bold hover:text-red-500 hover:scale-125 transition duration-150 ease-out hover:ease-in;
+    }
+
+    .todo-card .content {
+        @apply text-white font-normal py-2;
+    }
+
+    .todo-card-done {
+        @apply flex h-full bg-slate-200 w-full rounded-sm bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 border border-gray-100 justify-between shadow-lg shadow-blue-600/30 gap-3 px-4 py-2  w-full;
+    }
+
+    .todo-card-done .icons {
+        @apply flex justify-between order-2 flex-col p-1 gap-3;
+    }
+
+    .todo-card-done .icon {
+        @apply h-4 w-4 text-slate-400 font-bold transition duration-150 ease-out hover:ease-in hover:scale-125 ;
+    }
+
+    .todo-card-done .icon-danger {
+        @apply  h-4 w-4 text-slate-400 font-bold hover:text-red-500 hover:scale-125 transition duration-150 ease-out hover:ease-in;
+    }
+
+    .todo-card-done .content {
+        @apply text-slate-400 font-normal line-through py-2;
+    }
+
+    .title {
+        @apply text-blue-300 text-8xl text-center;
+    }
+
+    .add-todo-input-wrapper {
+        @apply border border-blue-200 shadow-lg shadow-blue-200/30 flex flex-row mt-8;
+    }
+
+    .add-todo-input-icon {
+        @apply h-6 w-6 text-blue-500 m-4 cursor-pointer hover:scale-125 transition duration-150 ease-out hover:ease-in;
+    }
+
+    .new-todo {
+        @apply w-full p-3 focus:outline-none;
+    }
+
+    .section-wrapper {
+        @apply flex flex-row gap-1;
+    }
+
+    .footer-wrapper {
+        @apply flex items-center gap-1 mt-1 justify-between p-2 px-3 shadow shadow-blue-200/40 drop-shadow-md;
+    }
+
+    .footer-wrapper .content {
+        @apply text-blue-600 text-xs font-medium;
+    }
+
+    .footer-wrapper .icon-wrapper {
+        @apply flex justify-between gap-3 mt-1;
+    }
+
+    .footer-wrapper .icon {
+        @apply h-6 w-6 cursor-pointer text-white font-bold bg-blue-600 rounded-full font-bold p-1 hover:scale-125 transition duration-150 ease-out hover:ease-in hover:bg-white hover:text-blue-600 hover:shadow hover:shadow-blue-600/50 hover:drop-shadow-lg;
+    }
+
+    .footer-wrapper .disabled {
+        @apply text-white font-bold bg-blue-300 p-1 hover:scale-100 hover:bg-blue-300 hover:text-white hover:shadow-none hover:drop-shadow-none cursor-default;
+    }
+
+    .section-1 {
+        @apply basis-11/12;
+    }
+
+    .cards-wrapper {
+        @apply flex gap-1 flex-wrap mt-6;
+    }
+
+    .navigation-wrapper {
+        @apply basis-1/12 mt-6 shadow shadow-blue-200/40 drop-shadow-md;
+    }
+
+    .todo {
+        @apply max-w-lg mx-auto p-10 mt-10;
+    }
+
+    .navigation-wrapper .lists {
+        @apply flex flex-col;
+    }
+
+    .navigation-wrapper .lists .active {
+        @apply !bg-blue-600 !border-blue-600;
+    }
+
+    .navigation-wrapper .lists .active .icon {
+        @apply !text-white;
+    }
+
+    .navigation-wrapper .lists .active .content {
+        @apply !text-white;
+    }
+
+    .navigation-wrapper .lists .item {
+        @apply flex cursor-pointer items-center gap-1 border p-2 py-3 bg-blue-100 border border-blue-50;
+    }
+
+    .navigation-wrapper .lists .item .icon {
+        @apply h-4 w-4 text-blue-600 font-bold hover:scale-125 transition duration-150 ease-out hover:ease-in;
+    }
+
+    .navigation-wrapper .lists .item .content {
+        @apply text-blue-600 font-medium text-xs text-left whitespace-nowrap;
+    }
+}
