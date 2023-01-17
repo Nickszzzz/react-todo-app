@@ -23,23 +23,23 @@
         @apply text-white font-normal py-2;
     }
 
-    .todo-card-done {
+    .cards-wrapper .done {
         @apply flex h-full bg-slate-200 w-full rounded-sm bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-90 border border-gray-100 justify-between shadow-lg shadow-blue-600/30 gap-3 px-4 py-2  w-full;
     }
 
-    .todo-card-done .icons {
+    .cards-wrapper .done .icons {
         @apply flex justify-between order-2 flex-col p-1 gap-3;
     }
 
-    .todo-card-done .icon {
+    .cards-wrapper .done .icon {
         @apply h-4 w-4 text-slate-400 font-bold transition duration-150 ease-out hover:ease-in hover:scale-125 ;
     }
 
-    .todo-card-done .icon-danger {
+    .cards-wrapper .done .icon-danger {
         @apply  h-4 w-4 text-slate-400 font-bold hover:text-red-500 hover:scale-125 transition duration-150 ease-out hover:ease-in;
     }
 
-    .todo-card-done .content {
+    .cards-wrapper .done .content {
         @apply text-slate-400 font-normal line-through py-2;
     }
 

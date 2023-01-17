@@ -4,7 +4,7 @@ import { TrashIcon, StopIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
 const Card = ({classname, is_done, content}) => {
   return (
     <>
-      <div className={`${classname} ${is_done}`}>
+      <div className={`${classname}`}>
         <div className="icons">
           
           { is_done ? <button><CheckCircleIcon className={`icon`} /></button> : <button><StopIcon className={`icon`} /></button> }
