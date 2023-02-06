@@ -3,55 +3,51 @@ import Card from '../components/Card';
 import Footer from '../includes/Footer';
 import { useState, useEffect } from 'react';
 
-const Cards = (props) => {
+const Cards = ({is_complete_all, tasks, deleteTask, toggleTask}) => {
 
-  const isCompleteAll = props.is_complete_all ? 'done' : '';
+  const isCompleteAll = is_complete_all ? 'done' : '';
   const [itemLeft, setItemLeft] = useState(0);
-  const todos = [
-    {
-      className: `todo-card ${isCompleteAll}`,
-      is_done: props.is_complete_all,
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    },
-    {
-      className: `todo-card ${isCompleteAll}`,
-      is_done: props.is_complete_all,
-      content: "Adipiscing elit",
-    },
-    {
-      className: `todo-card ${isCompleteAll}`,
-      is_done: props.is_complete_all,
-      content: "Lorem ipsum dolor sit amet",
-    }
-  ];
+  
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(2);
 
-  useEffect(() => {
-    var item_left = 0;
-    for(let i in todos) {
-      if(todos[i].is_done) 
-        item_left++;
-    }
+  const handleRange = range => {
+    setStart(range[0]);
+    setEnd(range[1]);
+  }
 
-    setItemLeft(item_left);
-    
-  });
+  // useEffect(() => {
+  //   var item_left = 0;
+  //   for(let i in todos) {
+  //     if(!todos[i].is_done) 
+  //       item_left++;
+  //   }
+  //   setItemLeft(item_left);
+  // });
+  
 
   return (
     <div className='section-1'>
       <div className="cards-wrapper">
-            {/* <Card classname={`todo-card ${isCompleteAll} `} is_done={props.is_complete_all} content="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
-            <Card classname={`todo-card ${isCompleteAll} `} is_done={props.is_complete_all} content="Lorem ipsum dolor sit amet" />
-            <Card classname={`todo-card ${isCompleteAll} `} is_done={props.is_complete_all} content="Lorem ipsum dolor sit amet" /> */}
-
             {
-              todos.map((todo, index) =>
-                <Card classname={todo.className} is_done={todo.is_done} content={todo.content} />
+              tasks.sort((a, b) => b.id - a.id).map((task, index) =>
+                {if(index >= start && index <= end) {
+                  return (<Card 
+                    classname={`todo-card ${isCompleteAll} ${task.checked ? 'done' : ''}`} 
+                    is_done={task.checked} 
+                    content={task.name} 
+                    deleteTask={deleteTask}
+                    id={task.id}
+                    toggleTask={toggleTask}
+                    />);
+                }}
               )
             }
       </div>
-      <Footer items_left={itemLeft} />
+      <Footer items_left={tasks.length} onSubmit={handleRange} />
     </div>
   )
 }
 
 export default Cards
+
